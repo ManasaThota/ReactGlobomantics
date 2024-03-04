@@ -16,7 +16,7 @@ const houseArray = [
     },
   ];
 
-const HouseList = () => {
+const HouseList = ({selectHouse}) => {
     const [houses, setHouses] = useState(houseArray);
     const addHouse = () => {
         setHouses([
@@ -45,7 +45,7 @@ const HouseList = () => {
           </tr>
         </thead>
         <tbody>
-            {houses.map(h=> <HouseRow key={h.id} house={h} />)}
+            {houses.map(h=> <HouseRow key={h.id} house={h} selectHouse={selectHouse}/>)}
         </tbody>
         </table>
         <button className="btn btn-primary" onClick={addHouse}>
